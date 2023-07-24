@@ -12,7 +12,7 @@ function apiGetStartPage() {
     api.getFetch()
     .then((responseData) => {
         userComment = responseData.comments.map((comment) => {
-            const createDate = format(comment.date, 'yyyy-MM-dd hh.mm.ss');
+            const createDate = format(new Date(comment.date), 'yyyy-MM-dd hh.mm.ss');
             let date = createDate;
             return {
                 id: comment.id,
